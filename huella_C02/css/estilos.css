@@ -1,0 +1,202 @@
+/* =================================================================
+1. VARIABLES GLOBALES Y ESTILOS DE BASE
+================================================================= */
+:root {
+    --primary-color: #27ae60;
+    --primary-hover-color: #1e8449;
+    --background-gradient: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    --text-color: #333;
+    --text-color-light: #555;
+    --border-color: #ccc;
+    --card-background: #ffffff;
+    --card-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    --focus-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-image: var(--background-gradient);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex; /* Usamos flex para ayudar a centrar el contenido principal */
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =================================================================
+2. ESTILOS DE COMPONENTES COMUNES (Botones, Inputs, Títulos)
+================================================================= */
+
+/* --- Títulos --- */
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.8em;
+    color: var(--text-color);
+}
+
+h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+/* --- Contenedores tipo "Tarjeta" --- */
+.form-container,
+.calculator-container {
+    background-color: var(--card-background);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    width: 100%;
+}
+
+nav {
+    text-align: center;
+    background-color: #e0f2f1;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* --- Campos de Entrada (Inputs y Selects) --- */
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: var(--focus-shadow);
+}
+
+/* --- Botones --- */
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--primary-hover-color);
+}
+
+/* =================================================================
+3. ESTILOS ESPECÍFICOS PÁGINA DE LOGIN/REGISTRO
+================================================================= */
+
+/* Contenedor que alinea las tarjetas de login y registro */
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Asegura que las tarjetas tengan la misma altura */
+    flex-wrap: wrap; /* Permite que se apilen en pantallas pequeñas */
+    gap: 40px; /* Espacio entre las tarjetas */
+}
+
+.form-container {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Truco para empujar el botón al final de la tarjeta */
+.form-container button {
+    margin-top: auto;
+}
+
+/* =================================================================
+4. ESTILOS ESPECÍFICOS PÁGINA DE CALCULADORA
+================================================================= */
+.calculator-container {
+    max-width: 600px;
+}
+
+.calculator-container h2 {
+    text-align: left; /* Título alineado a la izquierda en la calculadora */
+    border-bottom: 2px solid #f0f2f5;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+.calculator-container .input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator-container label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color-light);
+}
+
+.calculator-container button {
+    margin-top: 30px;
+}
+
+#resultado-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+#resultado-container.hidden {
+    display: none;
+}
+
+#comparacion h3 {
+    margin-top: 20px;
+    color: var(--text-color);
+    text-align: left;
+}
+#comparacion ul {
+    list-style-type: "→ ";
+    padding-left: 20px;
+}

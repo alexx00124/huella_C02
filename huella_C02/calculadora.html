@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Huella de Carbono</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+<body>
+
+    <div class="calculator-container">
+        <h1>Calculadora de Huella de Carbono</h1>
+        <nav>
+            <ul>
+                <li><a href="calculadora.html">Calculadora</a></li>
+                <li><a href="educacion.html">Educación</a></li>
+            </ul>
+        </nav>
+        
+        <div class="category">
+            <h2>Hogar</h2>
+            <div class="input-group">
+                <label for="electricidad">Electricidad (kWh/mes):</label>
+                <input type="number" id="electricidad" placeholder="Ej: 150">
+            </div>
+            <div class="input-group">
+                <label for="gas">Gas Natural (kWh/mes):</label>
+                <input type="number" id="gas" placeholder="Ej: 50">
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Movilidad</h2>
+            <div class="input-group">
+                <label for="autoKm">Km en auto (mensual):</label>
+                <input type="number" id="autoKm" placeholder="Ej: 300">
+            </div>
+            <div class="input-group">
+                <label for="transportePublico">Km en transporte público (mensual):</label>
+                <input type="number" id="transportePublico" placeholder="Ej: 100">
+            </div>
+            <div class="input-group">
+                <label for="vuelosCortos">Vuelos cortos al año (menos de 3h):</label>
+                <input type="number" id="vuelosCortos" placeholder="Ej: 2">
+            </div>
+            <div class="input-group">
+                <label for="vuelosLargos">Vuelos largos al año (más de 3h):</label>
+                <input type="number" id="vuelosLargos" placeholder="Ej: 1">
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Hábitos</h2>
+            <div class="input-group">
+                <label for="dieta">Tipo de dieta:</label>
+                <select id="dieta">
+                    <option value="omnivora" selected>Omnívora</option>
+                    <option value="vegetariana">Vegetariana</option>
+                    <option value="vegana">Vegana</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="consumo">Nivel de consumo (compras, ropa, etc.):</label>
+                <select id="consumo">
+                    <option value="bajo" selected>Bajo</option>
+                    <option value="medio">Medio</option>
+                    <option value="alto">Alto</option>
+                </select>
+            </div>
+        </div>
+
+        <button id="calcular">Calcular Huella</button>
+
+        <div id="resultado-container" class="hidden">
+            <h2>Resultado</h2>
+            <p id="resultado"></p>
+            <div id="comparacion"></div>
+        </div>
+    </div>
+
+    <script defer src="./js/calculadora.js"></script>
+</body>
+</html>

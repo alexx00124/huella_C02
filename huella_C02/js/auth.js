@@ -12,7 +12,7 @@ registerBtn.addEventListener('click', async () => {
     email,
     password,
     options: {
-    emailRedirectTo: 'http://localhost:5500/dashboard.html' // O el archivo que tú quieras mostrar luego del registro
+    emailRedirectTo: 'http://localhost:5500/huella_C02/calculadora.html'  // O el archivo que tú quieras mostrar luego del registro
   }
   });
 
@@ -36,6 +36,6 @@ loginBtn.addEventListener('click', async () => {
     alert('Error al iniciar sesión: ' + error.message);
   } else {
     alert('Inicio de sesión exitoso');
-    window.location.href = 'dashboard.html';
+    window.location.href = '/huella_C02/calculadora.html';
   }
 });
